@@ -56,7 +56,7 @@ db.put(tripple, function (err){
 Why?
 ------------
 
-To simplify graph streams over remote protocols and processes, the goal is compatibility with [multilevel](https://github.com/juliangruber/multilevel) and [sublevel](https://github.com/dominictarr/level-sublevel).
+To simplify graph streams over remote protocols/processes. Seeking ompatibility with [multilevel](https://github.com/juliangruber/multilevel) and [sublevel](https://github.com/dominictarr/level-sublevel).
 
 License
 -------
