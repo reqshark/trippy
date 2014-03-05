@@ -1,31 +1,22 @@
 Trippy is all about Tripples
 ======
 
-Cool, another graph database for level, but this one is heavily inspired by [levelgraph](https://github.com/mcollina/levelgraph). 
+Heavily inspired by [levelgraph](https://github.com/mcollina/levelgraph). 
 
-Trippy is a new levelDB module in early alpha development.
-
-It's an unstable, very experimental, brand new graph database. The API will change a lot over the coming days and weeks.
-
-Therefore, unless you're crazier than I am, it is not recommended for production.
-
+Trippy is a new levelDB module. Experimental, new graph database.
 
 What?
 ------------
 
 A trippy graph is a mesh of loosely connectable tripples. 
 
-What is a tripple? Some would call that a dictionary, but it's just simple JavaScript object of three keys, namely: `'subject','predicate','object'`, and any therein correllary value assignment your heart desires. 
-
-It doesn't matter what you name them: `s, p, o` is totally fine. 
-
-Trippy keys are arbitrary and their corresponding values ought to be crafted as arrays instead. But for now I guess lets use the conventions given to us.
+What is a tripple? A JavaScript object of three keys, namely: `'subject','predicate','object'`. Thinking about the grammer in terms of spoken language makes sense. Although it doesn't matter what you name them: `s, p, o` is totally fine. 
 
 
 Installation
 ------------
 
-Levelup on the server probably needs leveldown. Install packages as needed using `npm`:
+Install packages as needed using `npm`:
 
 ``` bash
 $ npm install trippy levelup leveldown level-sublevel multilevel
@@ -65,21 +56,7 @@ db.put(tripple, function (err){
 Why?
 ------------
 
-Needless to say, the high performance of LevelDB, Node.js as well as the portability of JavaScript make for [an ideal environment to construct the databases we dream of](https://github.com/rvagg/node-levelup/wiki/Resources). 
-
-Trippy is not just about enjoyable APIs that are super high performance. This module seeks to simplify graph streams over remote protocols and processes. Its primary goal is compatibility with [multilevel](https://github.com/juliangruber/multilevel) and [sublevel](https://github.com/dominictarr/level-sublevel).
-
-Multilevel for network exposure, sublevel for supporting minimally invasive modularity available to other level data design/structures.
-
-I guess I'm trying to write these trippy functions firmly around [the levelup API](https://github.com/rvagg/node-levelup#api) to ensure durable graph streams over TCP. This is not meant to be intelligent or fancy, but to keep things simple. Perhaps if this can be accomplished first and foremost, later there may be more support for custom functionality manifested/shared across level streams between client/host. 
-
-The appeal here comes from unprecedented access to cross-protocol remote API functions we've traditionally written on the other side of data streams, which lends to an enjoyable programming environment focused more appropriately around events that define our application.
-
-Moreover, since sublevel partitions levelDB trippy can hook in its core functionality without impacting abovelevel or other sublevel architectures.
-
-To understand more about this motivation and vision, [check out this gist](https://gist.github.com/rvagg/8345644).
-
-
+To simplify graph streams over remote protocols and processes, the goal is compatibility with [multilevel](https://github.com/juliangruber/multilevel) and [sublevel](https://github.com/dominictarr/level-sublevel).
 
 License
 -------
