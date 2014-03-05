@@ -1,9 +1,13 @@
 Trippy is all about Tripples
 ======
 
-Cool, another graph database for level, heavily inspired by [levelgraph](https://github.com/mcollina/levelgraph), trippy is a new levelDB module currently in early alpha development.
+Cool, another graph database for level, but this one is heavily inspired by [levelgraph](https://github.com/mcollina/levelgraph). 
 
-This is an unstable, very experimental, brand new graph database whose API will change much over the coming days and weeks. Therefore, unless you're crazier than I am, it is not recommended for production.
+Trippy is a new levelDB module in early alpha development.
+
+It's an unstable, very experimental, brand new graph database. The API will change a lot over the coming days and weeks.
+
+Therefore, unless you're crazier than I am, it is not recommended for production.
 
 
 What?
