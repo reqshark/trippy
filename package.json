@@ -1,8 +1,11 @@
 {
   "name": "trippy",
   "version": "0.0.1",
+  "author": "Bent Cardan",
   "description": "another graph database for level",
-  "main": "index.js",
+  "dependencies": {
+    "levelup":"*"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/reqshark/trippy"
@@ -11,17 +14,16 @@
     "level",
     "graph"
   ],
-  "author": "Bent Cardan",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/reqshark/trippy/issues"
   },
   "homepage": "https://github.com/reqshark/trippy",
-  "main": "./",
   "devDependencies": {
     "levelup":"*"
   },
+  "main": "index.js",
   "scripts": {
     "test": "mocha test"
-  }
+  },
+  "license": "MIT"
 }
