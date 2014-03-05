@@ -1,12 +1,5 @@
 
 /**
- * Module dependencies.
- */
-
-//var level = require('levelup');
-//var Sublevel = require('level-sublevel');
-
-/**
  * Module exports.
  */
 
