@@ -67,13 +67,13 @@ Why?
 
 Needless to say, the high performance of LevelDB, Node.js as well as the portability of JavaScript make for [an ideal environment to construct the databases we dream of](https://github.com/rvagg/node-levelup/wiki/Resources). 
 
-Trippy is not just about simple and fun APIs that are super high performance. 
-
-This module seeks to simplify streaming across protocols. Its primary goal is compatibility with [multilevel](https://github.com/juliangruber/multilevel) and [sublevel](https://github.com/dominictarr/level-sublevel).
+Trippy is not just about enjoyable APIs that are super high performance. This module seeks to simplify graph streams over remote protocols and processes. Its primary goal is compatibility with [multilevel](https://github.com/juliangruber/multilevel) and [sublevel](https://github.com/dominictarr/level-sublevel).
 
 Multilevel for network exposure, sublevel for supporting minimally invasive modularity available to other level data design/structures.
 
-I guess I'm trying to write these trippy functions firmly around [the levelup API](https://github.com/rvagg/node-levelup#api) to give us durable graph streams over TCP. This is not meant to be intelligent or fancy, but to keep things simple. 
+I guess I'm trying to write these trippy functions firmly around [the levelup API](https://github.com/rvagg/node-levelup#api) to ensure durable graph streams over TCP. This is not meant to be intelligent or fancy, but to keep things simple. Perhaps if this can be accomplished first and foremost, later there may be more support for custom functionality manifested/shared across level streams between client/host. 
+
+The appeal here comes from the ability to facilitate cross-protocol remote API functions as we've traditionally written it on the other side, which lends to a much more enjoyable programming environment focused more appropriately around events that define our application.
 
 Since sublevel partitions levelDB trippy can hook in its core functionality without impacting abovelevel or other sublevel architectures.
 
