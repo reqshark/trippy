@@ -27,9 +27,11 @@ module.exports = function(levelup,opts){
 
       //check opts value encoding first before using stringify
       _db.put(trip.join('::'),JSON.stringify(tripple),function(err){
-        
-        if(err) return fn(err); return fn(null);
-      
+
+        if(err) return err;
+
+        return fn(null);
+
       });
     },
     get: function(query,fn){
@@ -76,8 +78,8 @@ module.exports = function(levelup,opts){
     del: function(){
       //implement del...
     },
-    read:function(){
-      //implement readstream...
+    createReadStream:function(){
+      return _db.createReadStream();
     },
     write:function(){
       //implement writestream...

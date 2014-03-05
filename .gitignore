@@ -1,2 +1,4 @@
 node_modules
 data
+example/data
+example/manifest.json

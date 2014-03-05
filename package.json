@@ -4,9 +4,10 @@
   "author": "Bent Cardan <shark@stockickr.com> (http://stockickr.com/)",
   "description": "another graph database for level",
   "dependencies": {
-    "level":"*",
+    "levelup":"*",
     "level-sublevel":"*",
-    "multilevel":"*"
+    "multilevel": "git+https://github.com/juliangruber/multilevel.git",
+    "level-manifest":"*"
   },
   "repository": {
     "type": "git",
