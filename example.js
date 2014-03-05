@@ -1,9 +1,18 @@
 
-
 var levelup = require('levelup');
+var sublevel = require('level-sublevel');
 var trippy = require('./');
-var leveldb = levelup('data');
-var db = trippy(leveldb);
+var leveldb = sublevel(levelup('data', {valueEncoding:'json'}));
+var db = trippy(leveldb.sublevel('yourGraphLabel'));
+
+//normal leveldb
+leveldb.put('stuff',{spo:'sop'},function (err){
+  leveldb.get('stuff',function (err,val){
+    console.log(val)
+  });
+});
+
+//trippy graph
 
 var tripple1 = {
   s:'requestshark',

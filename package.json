@@ -4,7 +4,7 @@
   "author": "Bent Cardan <shark@stockickr.com> (http://stockickr.com/)",
   "description": "another graph database for level",
   "dependencies": {
-    "levelup":"*",
+    "level":"*",
     "level-sublevel":"*",
     "multilevel":"*"
   },

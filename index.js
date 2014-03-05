@@ -3,8 +3,8 @@
  * Module dependencies.
  */
 
-var level = require('levelup');
-var Sublevel = require('level-sublevel')
+//var level = require('levelup');
+//var Sublevel = require('level-sublevel');
 
 /**
  * Module exports.
@@ -13,11 +13,6 @@ var Sublevel = require('level-sublevel')
 module.exports = function(levelup,opts){
   
   if (!levelup) return new TypeError('missing required levelup or sublevel');
-  if (!levelup.db) return new TypeError('missing required levelup or sublevel');
-  
-
-  //one of the options will be whether to use a sublevel
-  //prob better not make that a choice, instead just graphdb through a sublevel
 
   var _db = levelup;
 
@@ -25,7 +20,7 @@ module.exports = function(levelup,opts){
     
     put: function(tripple,fn){
       
-      //we'll use this array to compress our tripple into a meaningful key
+      //compress tripple into key
       var trip = [];      
       for (i in tripple)
         trip.push(tripple[i])
