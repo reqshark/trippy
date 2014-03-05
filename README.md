@@ -9,15 +9,19 @@ This is an unstable, very experimental, brand new graph database whose API will 
 What?
 ------------
 
-A trippy graph is just a mesh of connected tripples. What is a tripple? Some would call that a dictionary, but it's just simple JavaScript object of three keys, namely: `'subject','predicate','object'`, and any therein correllary value assignment your heart desires. 
+A trippy graph is a mesh of loosely connectable tripples. 
 
-It doesn't matter what you call them: `s, p, o` is ok too. Trippy keys are definitely arbitrary and their corresponding values probably ought to be crafted as arrays instead. But for now I guess lets use the conventions given to us.
+What is a tripple? Some would call that a dictionary, but it's just simple JavaScript object of three keys, namely: `'subject','predicate','object'`, and any therein correllary value assignment your heart desires. 
+
+It doesn't matter what you name them: `s, p, o` is totally fine. 
+
+Trippy keys are arbitrary and their corresponding values ought to be crafted as arrays instead. But for now I guess lets use the conventions given to us.
 
 
 Installation
 ------------
 
-Levelup on the server probably needs leveldown. Install using `npm`:
+Levelup on the server probably needs leveldown. Install packages as needed using `npm`:
 
 ``` bash
 $ npm install trippy levelup leveldown level-sublevel multilevel
@@ -57,10 +61,44 @@ db.put(tripple, function (err){
 Why?
 ------------
 
-Needless to say, the high performance of LevelDB and Node.js make for an ideal environment to construct the databases we dream of. 
+Needless to say, the high performance of LevelDB, Node.js as well as the portability of JavaScript make for [an ideal environment to construct the databases we dream of](https://github.com/rvagg/node-levelup/wiki/Resources). 
 
-Trippy is not just about making simple and fun APIs that are super high performance. 
+Trippy is not just about simple and fun APIs that are super high performance. 
 
-This module is about remote replication. It's primary goal is compatibility with [multilevel](https://github.com/juliangruber/multilevel) and [sublevel](https://github.com/dominictarr/level-sublevel). 
+This module seeks to simplify streaming across protocols. Its primary goal is compatibility with [multilevel](https://github.com/juliangruber/multilevel) and [sublevel](https://github.com/dominictarr/level-sublevel).
 
-I'm trying to write Trippy functions firmly around the levelup API order to provided us with durable and consistent graph database streams over TCP. This is not meant to be intelligent or fancy, but to keep things simple.
+Multilevel for network exposure, sublevel for supporting minimally invasive modularity available to other level data design/structures.
+
+I guess I'm trying to write these trippy functions firmly around [the levelup API](https://github.com/rvagg/node-levelup#api) to give us durable graph streams over TCP. This is not meant to be intelligent or fancy, but to keep things simple. 
+
+Since sublevel partitions levelDB trippy can hook in its core functionality without impacting abovelevel or other sublevel architectures.
+
+To understand more about this motivation and vision, [check out this gist](https://gist.github.com/rvagg/8345644).
+
+
+
+License
+-------
+
+(The MIT License)
+
+Copyright (c) 2014 Bent Cardan &lt;shark@stockickr.com&gt;
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
