@@ -3,14 +3,14 @@ Trippy is all about Tripples
 
 Heavily inspired by [levelgraph](https://github.com/mcollina/levelgraph). 
 
-Trippy is a new levelDB module. Experimental, new graph database.
+Trippy is a new levelDB module. Experimental, graph database.
 
 What?
 ------------
 
-A trippy graph is a mesh of loosely connectable tripples. 
+A mesh of loosely connectable tripples. 
 
-What is a tripple? A JavaScript object of three keys, namely: `'subject','predicate','object'`. Thinking about the grammer in terms of spoken language makes sense. Although it doesn't matter what you name them: `s, p, o` is totally fine. 
+Whats a tripple? A JavaScript object of three keys, namely: `'subject','predicate','object'`. Thinking about the grammer as a sentence makes it easier to understand. Graph tripples also pay dividends for complex/interconnected queries. Although right now, using this module, it doesn't matter what you name them: `s, p, o` is totally fine. 
 
 
 Installation
