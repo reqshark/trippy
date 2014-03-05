@@ -73,9 +73,9 @@ Multilevel for network exposure, sublevel for supporting minimally invasive modu
 
 I guess I'm trying to write these trippy functions firmly around [the levelup API](https://github.com/rvagg/node-levelup#api) to ensure durable graph streams over TCP. This is not meant to be intelligent or fancy, but to keep things simple. Perhaps if this can be accomplished first and foremost, later there may be more support for custom functionality manifested/shared across level streams between client/host. 
 
-The appeal here comes from the ability to facilitate cross-protocol remote API functions as we've traditionally written it on the other side, which lends to a much more enjoyable programming environment focused more appropriately around events that define our application.
+The appeal here comes from unprecedented access to cross-protocol remote API functions we've traditionally written on the other side of data streams, which lends to an enjoyable programming environment focused more appropriately around events that define our application.
 
-Since sublevel partitions levelDB trippy can hook in its core functionality without impacting abovelevel or other sublevel architectures.
+Moreover, since sublevel partitions levelDB trippy can hook in its core functionality without impacting abovelevel or other sublevel architectures.
 
 To understand more about this motivation and vision, [check out this gist](https://gist.github.com/rvagg/8345644).
 
