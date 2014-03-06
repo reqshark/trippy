@@ -39,7 +39,21 @@ module.exports = function(levelup,opts){
     },
     get: function(query,fn){
 
-      var qKey = Object.keys(query), finding=[], rs = _db.createReadStream();
+      var qKey = Object.keys(query), finding=[];
+
+
+      //return the object if we query it
+      if(qKey.length == 3){
+        var trip = [];
+        for (i in query)
+          trip.push(query[i]);
+        return _db.get(trip.join('::'),function (err,t){
+          if(err) return err;
+          return fn(null,JSON.parse(t));
+        });
+      }
+
+      var rs = _db.createReadStream();
       
       rs.on('error',function(err){
         return fn(err);
@@ -48,6 +62,7 @@ module.exports = function(levelup,opts){
       rs.on('end',function(){
         return fn(null,finding);
       });
+
 
       if(qKey.length == 1){
 
@@ -78,8 +93,16 @@ module.exports = function(levelup,opts){
       }
     
     },
-    del: function(){
-      //implement del...
+    del: function(tripple,fn){
+      //pass full tripples to del, partial queries would be too powerful
+      //same put/del above in trippleObjects func to produce key... 
+      var trip = [];
+      for (i in tripple)
+        trip.push(tripple[i]);
+      _db.del(trip.join('::'),JSON.stringify(tripple),function (err){
+        if(err) return fn(err);
+        return fn(null,'tripple deleted: ',tripple);
+      });
     },
     createReadStream:function(){
       return _db.createReadStream();
