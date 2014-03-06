@@ -18,11 +18,9 @@ con2.pipe(leveldb.createRpcStream()).pipe(con2);
 //  leveldb.createReadStream().on('data',console.log)
 //})
 
-//stream of our tripple indexed social network
-var db = trippy(db);
-
 db.get({s:'rhino'},function(err,val){
   setTimeout(function(){
+
     var rs = db.createReadStream();
 
     console.log('start streaming tripples to client.. ')
