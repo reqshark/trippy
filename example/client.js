@@ -14,13 +14,28 @@ con1.pipe(db.createRpcStream()).pipe(con1);
 con2.pipe(leveldb.createRpcStream()).pipe(con2);
 
 //connect async methods to multilevel abovelevel database
-leveldb.put('key','the key\'s value',function(err){
-  leveldb.createReadStream().on('data',console.log)
-})
+//leveldb.put('key','the key\'s value',function(err){
+//  leveldb.createReadStream().on('data',console.log)
+//})
 
-//simple stream of our tripple indexed social network from when server.js was initialized
+//stream of our tripple indexed social network
 var db = trippy(db);
-var rs = db.createReadStream();
-rs.on('data',function(data){
-  console.log(JSON.parse(data.value))
+
+db.get({s:'rhino'},function(err,val){
+  setTimeout(function(){
+    var rs = db.createReadStream();
+
+    console.log('start streaming tripples to client.. ')
+
+    rs.on('data',function(data){
+      console.log(JSON.parse(data.value))
+      console.log('\n')
+    });
+
+    rs.on('end',function(){
+      console.log('stream is done.')
+    })
+
+
+  },1000)
 })
