@@ -10,7 +10,7 @@ What?
 
 A mesh of loosely connectable tripples. 
 
-Whats a tripple? A JavaScript object of three keys, namely: `'subject','predicate','object'`. Thinking about the grammer as a sentence makes it easier to understand. Graph tripples also pay dividends for complex/interconnected queries.
+Whats a tripple? A JavaScript object of three keys, namely: `'subject','predicate','object'`. Thinking about the grammar as a sentence makes it easier to understand. Graph tripples also pay dividends for complex/interconnected queries.
 
 
 Installation
