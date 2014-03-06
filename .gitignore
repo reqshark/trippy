@@ -1,4 +1,7 @@
 node_modules
+manifest.json
 data
 example/data
 example/manifest.json
+example/client2.js
+example/server2.js
