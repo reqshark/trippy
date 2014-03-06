@@ -1,10 +1,24 @@
 
+
+function trippleObjects(tripple,_db,fn){
+  if(Object.keys(tripple).length != 3)
+    throw new TypeError('too few or too many predicates, nest objects')
+  var trip = [];
+  for (i in tripple)
+    trip.push(tripple[i]);
+  _db.put(trip.join('::'),JSON.stringify(tripple),function (err){
+    if(err) return err;
+    return fn(null);
+  })
+}
+
+
 /**
  * Module exports.
  */
 
 module.exports = function(levelup,opts){
-  
+
   if (!levelup) return new TypeError('missing required levelup or sublevel');
 
   var _db = levelup;
@@ -12,20 +26,16 @@ module.exports = function(levelup,opts){
   var db = {
     
     put: function(tripple,fn){
-      
-      //compress tripple into key
-      var trip = [];      
-      for (i in tripple)
-        trip.push(tripple[i])
 
-      //check opts value encoding first before using stringify
-      _db.put(trip.join('::'),JSON.stringify(tripple),function(err){
-
-        if(err) return err;
-
-        return fn(null);
-
-      });
+      if (typeof tripple != 'object' && !Array.isArray(tripple))
+        throw new TypeError('tripple(s) are of the wrong type');
+      if(Array.isArray(tripple)){
+        tripple.forEach(function(v,i){
+          trippleObjects(v,_db,fn)
+        });
+      } else {
+        return trippleObjects(tripple,_db,fn);
+      }
     },
     get: function(query,fn){
 
