@@ -24,6 +24,3 @@ var rs = db.createReadStream();
 rs.on('data',function(data){
   console.log(JSON.parse(data.value))
 })
-
-
-
